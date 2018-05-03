@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+	<package name="com.zhbit.action" namespace="/" extends="struts-default">
+		<interceptors>
+			<interceptor name="myInter" class="com.zhbit.interceptor.CheckInterceptor"></interceptor>
+		</interceptors>
+        <action name="hello" class="com.zhbit.action.RegisterAction">
+            <result name="success">/success.jsp</result>
+            <result name="input">/register.jsp</result>
+        </action>
+        <action name="exchange" class="com.zhbit.action.ChangeLanguaeAction">
+	   		<interceptor-ref name="defaultStack"></interceptor-ref>  
+            <interceptor-ref name="myInter"></interceptor-ref>
+            <result name="hhh">/login.jsp</result>	   		
+	   	</action>
+	   	<action name="login" class="com.zhbit.action.LoginAction" method="login">
+	   		<result name="success" type="chain">log</result>
+	   		<result name="input">/login.jsp</result>
+	   		<result name="error">/wrong.jsp</result>
+	   	</action>
+	   	<action name="log" class="com.zhbit.action.LogAction">
+			<result name="success">/login_success.jsp</result>
+		</action>
+	</package>
+</struts>

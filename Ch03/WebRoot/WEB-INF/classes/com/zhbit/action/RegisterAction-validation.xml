@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC 
+  "-//OpenSymphony Group//XWork Validator 1.0.2//EN" 
+  "http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+<validators>
+	<field name="person.username">
+		<field-validator type="requiredstring" short-circuit="false"  >
+			<message>框架验证：姓名不能为空</message>
+		</field-validator>
+	</field>
+	<field name="person.pwd">
+		<field-validator type="stringlength">
+			<param name="minLength">6</param>
+			<param name="maxLength">10</param>
+			<message>框架验证：密码的长度必须在${minLength}和${maxLength}之间</message>
+		</field-validator>
+		<field-validator type="requiredstring" short-circuit="false"  >
+			<message>框架验证：密码不能为空</message>
+		</field-validator>
+	</field>
+	<field name="person.telphone">
+		<field-validator type="requiredstring" short-circuit="false"  >
+			<message>框架验证：电话不能为空</message>
+		</field-validator>
+	</field>
+	<field name="person.sex">
+		<field-validator type="requiredstring" short-circuit="false"  >
+			<message>框架验证：性别不能为空</message>
+		</field-validator>
+	</field>
+	<field name="person.birthday">
+		<field-validator type="requiredstring" short-circuit="false"  >
+			<message>框架验证：出生日期不能为空</message>
+		</field-validator>
+	</field>
+</validators>
